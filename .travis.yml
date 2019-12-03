@@ -6,7 +6,7 @@ notifications:
 env:
   - RELEASE_TAG="release-$TRAVIS_BUILD_NUMBER"
 
-if: tag IS blank && branch = master
+if: tag IS blank && branch = test
 
 
 jobs:
