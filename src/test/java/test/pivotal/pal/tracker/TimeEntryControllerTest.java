@@ -33,7 +33,7 @@ public class TimeEntryControllerTest {
         long userId = 456L;
         TimeEntry timeEntryToCreate = new TimeEntry(projectId, userId, LocalDate.parse("2017-01-08"), 8);
 
-        long timeEntryId = 1L;
+        long timeEntryId = 2L;
         TimeEntry expectedResult = new TimeEntry(timeEntryId, projectId, userId, LocalDate.parse("2017-01-08"), 8);
         doReturn(expectedResult)
             .when(timeEntryRepository)
@@ -41,6 +41,9 @@ public class TimeEntryControllerTest {
 
 
         ResponseEntity response = controller.create(timeEntryToCreate);
+
+        System.out.println("response" + response.getStatusCode());
+        System.out.println("Expected get ID" + expectedResult.getId());
 
 
         verify(timeEntryRepository).create(timeEntryToCreate);
