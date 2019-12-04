@@ -15,7 +15,7 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository{
     Map <Long,TimeEntry> store = new HashMap<>();
 
     public TimeEntry create(TimeEntry timeEntry) {
-        counter++;
+        counter += 1;
         System.out.println("Counter " + counter);
         timeEntry.setId(counter);
         store.put(counter, timeEntry);
