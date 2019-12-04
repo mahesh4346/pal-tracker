@@ -11,8 +11,8 @@ import java.util.Map;
 
 public class InMemoryTimeEntryRepository implements TimeEntryRepository{
 
-    long counter=0L;
-    Map <Long,TimeEntry> store = new HashMap<>();
+    private long counter=0L;
+    private final Map <Long,TimeEntry> store = new HashMap<>();
 
     public TimeEntry create(TimeEntry timeEntry) {
         counter += 1;

@@ -20,10 +20,10 @@ public class TimeEntryController {
     @PostMapping("/time-entries")
     public ResponseEntity create(@RequestBody TimeEntry timeEntryToCreate) {
 
-        System.out.println("Inside rest create Before "+timeEntryToCreate.getProjectId());
+        System.out.println("Inside rest create Before "+timeEntryToCreate);
         TimeEntry createdTimeEntry = timeEntryRepository.create(timeEntryToCreate);
 
-        System.out.println("Inside rest create After " +createdTimeEntry.getProjectId() );
+        System.out.println("Inside rest create After " +createdTimeEntry);
         return new ResponseEntity<TimeEntry>(createdTimeEntry, HttpStatus.CREATED);
     }
 
